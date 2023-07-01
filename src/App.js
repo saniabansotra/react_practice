@@ -1,11 +1,10 @@
 import { useState } from "react";
-import ArrayComponent from "./component/Array";
-// import ConditionalRendering from "./components/ConditionalRendering";
-
+import ArrayOfObject from "./component/ArrayOfObject";
+// import ArrayComponent from "./component/Array";
 const App = () => {
   return (
     <>
-      <ArrayComponent />
+      <ArrayOfObject />
     </>
   );
 };

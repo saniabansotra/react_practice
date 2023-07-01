@@ -2,81 +2,97 @@ import React, { useState } from "react";
 import sound from "./assest/music.wav";
 const ArrayComponent = () => {
   const [toggle, settoggle] = useState(true);
-  const [color, setcolor] = useState("black");
-  const [fruits, setfruits] = useState(["Apple", "Banana", "Orange", "Mango"]);
+  const [color, setcolor] = useState("yellow");
+  const [color1, setcolor1] = useState("pink");
+  const [veges, setveges] = useState([
+    "Potato",
+    "Tomato",
+    "Ladyfinger",
+    "Cabbage",
+    "Capsicum",
+  ]);
   const handleShuffle = () => {
     if (toggle) {
-      setfruits(["Banana", "Oranges", "Apple", "Grapes"]);
+      setveges(["Tomato", "Cabbage", "Ladyfinger", "Capsicum", "Potato"]);
     } else {
-      setfruits(["Apple", "Banana", "Grapes", "Orange"]);
+      setveges(["Potato", "Tomato", "Ladyfinger", "Cabbage", "Capsicum"]);
     }
     settoggle(!toggle);
+    setcolor("red");
   };
-  const removeGrapes = () => {
-    setfruits(["Apple", "Banana", "Orange"]);
-    setcolor("Green");
+  const removeCapsicum = () => {
+    setveges(["Potato", "Tomato", "Ladyfinger", "Cabbage"]);
+    setcolor("pink");
   };
-  const addGrapes = () => {
-    setfruits(["Apple", "Banana", "Grapes", "Orange"]);
+  const addCapsicum = () => {
+    setveges(["Potato", "Tomato", "Ladyfinger", "Cabbage", "Capsicum"]);
+    setcolor("yellow");
   };
   const play = () => {
     new Audio(sound).play();
   };
-  const addfruits = () => {
-    let upfruits = [...fruits];
-    upfruits.push("Lichi");
-    upfruits.push("Mango");
-    setfruits(upfruits);
+  const addveges = () => {
+    let upveges = [...veges];
+    upveges.push("BitterGuard");
+    setveges(upveges);
+    setcolor("blue");
   };
 
   return (
     <>
-      <p>This is the list of fruits</p>
-      <ol style={{ backgroundcolor: color }}>
-        <li>{fruits[0]} </li>
-        <li> {fruits[1]}</li>
-        <li> {fruits[2]}</li>
-        <li> {fruits[3]}</li>
-        <li> {fruits[5]}</li>
-        <li> {fruits[6]}</li>
-      </ol>
-      <button
-        onClick={() => {
-          handleShuffle();
-          play();
-        }}
-        type="button"
-      >
-        Shuffle Fruits
-      </button>
-      <button
-        onClick={() => {
-          removeGrapes();
-          play();
-        }}
-        type="button"
-      >
-        {" "}
-        Remove Grapes
-      </button>
-      <button
-        onClick={() => {
-          addGrapes();
-          play();
-        }}
-        type="button"
-      >
-        Add Grapes
-      </button>
-      <button
-        onClick={() => {
-          addfruits();
-          play();
-        }}
-        type="button"
-      >
-        Add Fruits
-      </button>
+      <div style={{ backgroundColor: "cyan" }}>
+        <p style={{ backgroundColor: color1 }}>Here are some Vegetables</p>
+        <ol style={{ backgroundColor: color }}>
+          {veges.map((v) => {
+            return (
+              <>
+                <li>{v}</li>
+              </>
+            );
+          })}
+        </ol>
+        <button
+          style={{ backgroundColor: "brown" }}
+          onClick={() => {
+            handleShuffle();
+            play();
+          }}
+          type="button"
+        >
+          Shuffle Veges
+        </button>
+        <button
+          style={{ backgroundColor: "brown" }}
+          onClick={() => {
+            removeCapsicum();
+            play();
+          }}
+          type="button"
+        >
+          {" "}
+          Remove Capsicum
+        </button>
+        <button
+          style={{ backgroundColor: "brown" }}
+          onClick={() => {
+            addCapsicum();
+            play();
+          }}
+          type="button"
+        >
+          Add Capsicum
+        </button>
+        <button
+          style={{ backgroundColor: "brown" }}
+          onClick={() => {
+            addveges();
+            play();
+          }}
+          type="button"
+        >
+          Add Veges
+        </button>
+      </div>
     </>
   );
 };
