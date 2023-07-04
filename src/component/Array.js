@@ -28,6 +28,14 @@ const ArrayComponent = () => {
     setveges(["Potato", "Tomato", "Ladyfinger", "Cabbage", "Capsicum"]);
     setcolor("yellow");
   };
+  const addpotato = () => {
+    setveges(["Potato", "Tomato", "Ladyfinger", "Cabbage", "Capsicum"]);
+    setcolor("yellow");
+  };
+  const removepotato = () => {
+    setveges(["Tomato", "Ladyfinger", "Cabbage", "Capsicum"]);
+    setcolor("yellow");
+  };
   const play = () => {
     new Audio(sound).play();
   };
@@ -91,6 +99,26 @@ const ArrayComponent = () => {
           type="button"
         >
           Add Veges
+        </button>
+        <button
+          style={{ backgroundColor: "brown" }}
+          onClick={() => {
+            addpotato();
+            play();
+          }}
+          type="button"
+        >
+          Add potato
+        </button>
+        <button
+          style={{ backgroundColor: "brown" }}
+          onClick={() => {
+            removepotato();
+            play();
+          }}
+          type="button"
+        >
+          remove potato
         </button>
       </div>
     </>
