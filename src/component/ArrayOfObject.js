@@ -71,6 +71,11 @@ const ArrayOfObject = () => {
   const play = () => {
     new Audio(sound).play();
   };
+  const deleteman = () => {
+    let oldStudents = [...student];
+    let newStudnets = oldStudents.filter((v, i) => v.name !== "sanii");
+    setstudent(newStudnets);
+  };
 
   return (
     <>
@@ -84,21 +89,7 @@ const ArrayOfObject = () => {
         >
           LIST OF STUDENTS
         </h1>
-
-        {/* <li>Name: {student[0].name} </li>
-        <li>Batch: {student[0].batch}</li>
-        <li>Package: {student[0].package}</li>
-      </ul>
-      <ul>
-        <li>Name: {student[1].name} </li>
-        <li>Batch: {student[1].batch}</li>
-        <li>Package: {student[1].package}</li>
-      </ul>
-      <ul>
-        <li>Name: {student[2].name} </li>
-        <li>Batch: {student[2].batch}</li>
-        <li>Package: {student[2].package}</li> */}
-        {student.map((v) => {
+        {student.map((v, i) => {
           return (
             <>
               <ul style={{ color: "black", backgroundColor: color1 }}>
@@ -130,6 +121,15 @@ const ArrayOfObject = () => {
           Remove Student
         </button>
       </div>
+      <button
+        style={{ color: "black", backgroundColor: "Yellow" }}
+        onClick={() => {
+          deleteman();
+          play();
+        }}
+      >
+        delete sanii
+      </button>
     </>
   );
 };
