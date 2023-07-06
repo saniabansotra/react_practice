@@ -1,10 +1,10 @@
 import { useState } from "react";
-import ArrayOfObject from "./component/ArrayOfObject";
-// import ArrayComponent from "./component/Array";
+// import ArrayOfObject from "./component/ArrObject";
+import ArrayComponent from "./component/Array";
 const App = () => {
   return (
     <>
-      <ArrayOfObject />
+      <ArrayComponent />
     </>
   );
 };

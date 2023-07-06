@@ -45,6 +45,11 @@ const ArrayComponent = () => {
     setveges(upveges);
     setcolor("blue");
   };
+  const deleteveges = (c) => {
+    let oldveges = [...veges];
+    let newveges = oldveges.filter((v, i) => v !== c);
+    setveges(newveges);
+  };
 
   return (
     <>
@@ -55,6 +60,7 @@ const ArrayComponent = () => {
             return (
               <>
                 <li>{v}</li>
+                <button onClick={() => deleteveges()}>Remove Me</button>
               </>
             );
           })}
