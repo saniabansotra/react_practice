@@ -1,10 +1,12 @@
 import { useState } from "react";
 // import ArrayOfObject from "./component/ArrObject";
 import ArrayComponent from "./component/Array";
+import Task from "./component/TaskManagement";
+import "./App.css";
 const App = () => {
   return (
     <>
-      <ArrayComponent />
+      <Task />
     </>
   );
 };
